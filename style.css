@@ -7,7 +7,7 @@
     
 }
 
-.line{
+.square{
     display: flex;
     flex-wrap: wrap;
     border: solid;

@@ -9,7 +9,7 @@ function setTable (n) {
         for (let x=0; x<n; x++){
             const column = document.querySelector(`.cl${i}`);
             const newLine = document.createElement("div");
-            newLine.classList.add('line');
+            newLine.classList.add('square');
             column.appendChild(newLine);
         }
     }
