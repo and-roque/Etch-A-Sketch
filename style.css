@@ -1,15 +1,19 @@
 .container {
     display: flex;
     flex-direction: column;
+    width: 960px;
+    height: 960px;
 }
 .column {
     display: flex;
+    justify-content: content;
+    align-content:content;
     
 }
 
 .square{
     display: flex;
-    flex-wrap: wrap;
+    flex-grow: 1;
     border: solid;
     border-width: 1px;
     border-color: black;
