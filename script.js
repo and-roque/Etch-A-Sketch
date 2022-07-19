@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 
+//Set table size
 function setTable (n) {
     for (let i=0; i<n; i++){
         const newColumn = document.createElement("div");
@@ -16,6 +17,13 @@ function setTable (n) {
 }
 
 setTable(16);
-    
+
+//Event listener for "Hover -> change background"
+const squares = document.querySelectorAll('.square');
+squares.forEach((square)=>{
+    square.addEventListener('mouseenter', ()=>{
+        square.style.backgroundColor = "black";
+    });
+});
 
 
