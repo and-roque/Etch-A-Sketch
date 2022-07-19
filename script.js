@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 
 //Set table size
 function setTable (n) {
+    container.replaceChildren(); //Deletes container's DIVs
     for (let i=0; i<n; i++){
         const newColumn = document.createElement("div");
         newColumn.classList.add(`cl${i}`);
@@ -16,14 +17,28 @@ function setTable (n) {
     }
 }
 
-setTable(16);
+//setTable(16);
 
-//Event listener for "Hover -> change background"
+
+
+
+//Event listener for button "SET TABLE SIZE"
+const btnSetTableSize = document.querySelector("#setTableSize");
+btnSetTableSize.addEventListener('click', () => {
+    let tableSize = prompt("Please set table size");
+    if (tableSize>100 || tableSize<1){
+        tableSize = prompt("Please set a size between 1-100");
+    } else {
+        setTable(tableSize);
+        console.log("HEY");
+        //Event listener for "Hover -> change background"
 const squares = document.querySelectorAll('.square');
-squares.forEach((square)=>{
-    square.addEventListener('mouseenter', ()=>{
-        square.style.backgroundColor = "black";
-    });
+        squares.forEach((square)=>{
+            square.addEventListener('mouseenter', ()=>{
+                square.style.backgroundColor = "black";
+            });
+        });
+    }
 });
 
 
