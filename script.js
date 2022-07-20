@@ -15,6 +15,9 @@ function setTable (n) {
             column.appendChild(newLine);
         }
     }
+    const square = document.querySelector(".square");
+    square.width= 960/n;
+    square.height= 960/n;
 }
 
 //setTable(16);
@@ -34,7 +37,7 @@ btnSetTableSize.addEventListener('click', () => {
         //Event listener for "Hover -> change background"
 const squares = document.querySelectorAll('.square');
         squares.forEach((square)=>{
-            square.addEventListener('mouseenter', ()=>{
+            square.addEventListener('mouseover', ()=>{
                 square.style.backgroundColor = "black";
             });
         });

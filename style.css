@@ -1,6 +1,5 @@
 .container {
     display: flex;
-    flex-direction: column;
     width: 960px;
     height: 960px;
 }
@@ -8,7 +7,8 @@
     display: flex;
     justify-content: content;
     align-content:content;
-    
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .square{
@@ -17,7 +17,6 @@
     border: solid;
     border-width: 1px;
     border-color: black;
-    padding: 30px 30px;
 }
 
 /*.square:hover{
