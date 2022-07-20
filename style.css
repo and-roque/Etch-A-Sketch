@@ -30,7 +30,7 @@ body{
     border-color: black;
 }
 
-#setTableSize {
+button {
     margin-top: 25px;
     margin-bottom: 40px;
     padding: 12px 24px;
@@ -39,12 +39,7 @@ body{
     
 }
 
-#setTableSize:hover{
+button:hover{
     transform: translate3d(0,-0.8px,0);
     background-color: cadetblue;
 }
-
-/*.square:hover{
-    background-color: black;
-    cursor: pointer;
-}*/
