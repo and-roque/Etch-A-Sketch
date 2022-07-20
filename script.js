@@ -43,18 +43,18 @@ btnSetTableSize.addEventListener('click', () => {
 //Event listener for "Hover -> change background"
 function drawing (){
     
-        const squares = document.querySelectorAll('.square');
-        squares.forEach((square)=>{
-            square.addEventListener('mouseover', ()=>{
-                if (click){
-                    if(mode === "randomRgb"){
-                        square.style.backgroundColor = randomRgb(); 
-                    } else if (mode === "black"){
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square)=>{
+        square.addEventListener('mouseover', ()=>{
+            if (click){
+                if(mode === "randomRgb"){
+                    square.style.backgroundColor = randomRgb(); 
+                } else if (mode === "black"){
                         square.style.backgroundColor = "black";
                         
-                    } else if (mode === "erase"){
+                } else if (mode === "erase"){
                         square.style.backgroundColor = "white";
-                    } else {
+                } else {
                         let currentOpacity = Number(square.style.backgroundColor.slice(-4, -1));
                         if (currentOpacity<1){
                             square.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
@@ -63,10 +63,10 @@ function drawing (){
                         } else {
                             square.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
                         }
-                    }
                 }
-            });
+            }
         });
+    });
 };
 
 
