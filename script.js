@@ -81,10 +81,11 @@ function randomRgb () {
 const colorOptions = document.querySelectorAll('.colorOptions');
 colorOptions.forEach((option)=>{
         option.addEventListener('click',()=>{
-            if (option.id=== "clean"){
-                if(mode="erase") mode = "black";
+            if (option.id === "clean"){
+                if(mode === "erase") mode = "black";
                 setTable(tableSize);
                 drawing();
+                console.log(mode);
             } else mode = option.id;   
         })
     });
