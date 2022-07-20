@@ -1,8 +1,9 @@
 const container = document.querySelector(".container");
-setTable(16);
+let tableSize =16;
+setTable(tableSize);
 drawing();
 //drawing("black");
-let mode;
+let mode='black';
 
 //Set table size
 function setTable (n) {
@@ -26,8 +27,9 @@ function setTable (n) {
 
 //Event listener for button "SET TABLE SIZE"
 const btnSetTableSize = document.querySelector("#setTableSize");
+
 btnSetTableSize.addEventListener('click', () => {
-    let tableSize = prompt("Please set table size");
+    tableSize = prompt("Please set table size");
     if (tableSize>100 || tableSize<1){
         tableSize = prompt("Please set a size between 1-100");
     } else {
@@ -45,6 +47,9 @@ function drawing (){
                 square.style.backgroundColor = randomRgb(); 
             } else if (mode === "black"){
                 square.style.backgroundColor = "black";
+                
+            } else if (mode === "erase"){
+                square.style.backgroundColor = "white";
             } else {
                 let currentOpacity = Number(square.style.backgroundColor.slice(-4, -1));
                 if (currentOpacity<1){
@@ -71,6 +76,9 @@ function randomRgb () {
 const colorOptions = document.querySelectorAll('.colorOptions');
 colorOptions.forEach((option)=>{
         option.addEventListener('click',()=>{
-            mode = option.id;   
+            if (option.id=== "clean"){
+                setTable(tableSize);
+                drawing();
+            } else mode = option.id;   
         })
     });
