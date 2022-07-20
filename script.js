@@ -1,4 +1,6 @@
 const container = document.querySelector(".container");
+setTable(16);
+drawing();
 
 //Set table size
 function setTable (n) {
@@ -16,14 +18,9 @@ function setTable (n) {
         }
     }
     const square = document.querySelector(".square");
-    square.width= 960/n;
-    square.height= 960/n;
+    square.width = 720/n;
+    square.height = 720/n;
 }
-
-//setTable(16);
-
-
-
 
 //Event listener for button "SET TABLE SIZE"
 const btnSetTableSize = document.querySelector("#setTableSize");
@@ -34,14 +31,23 @@ btnSetTableSize.addEventListener('click', () => {
     } else {
         setTable(tableSize);
         console.log("HEY");
-        //Event listener for "Hover -> change background"
-const squares = document.querySelectorAll('.square');
-        squares.forEach((square)=>{
-            square.addEventListener('mouseover', ()=>{
-                square.style.backgroundColor = "black";
-            });
-        });
+        drawing();
     }
 });
 
+//Event listener for "Hover -> change background"
+function drawing() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square)=>{
+    square.addEventListener('mouseover', ()=>{
+        //square.style.backgroundColor = "black";
+        square.style.backgroundColor = randomRgb();
+        });
+    });
+};
 
+function randomRgb () {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let value = "#"+ randomColor;
+    return value;
+};
