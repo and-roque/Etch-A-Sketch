@@ -43,3 +43,7 @@ button:hover{
     transform: translate3d(0,-0.8px,0);
     background-color: cadetblue;
 }
+
+#clean:hover{
+    background-color:rgb(182, 38, 38);
+}
