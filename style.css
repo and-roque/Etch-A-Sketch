@@ -1,3 +1,14 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
 .container {
     display: flex;
     width: 960px;
@@ -17,6 +28,20 @@
     border: solid;
     border-width: 1px;
     border-color: black;
+}
+
+#setTableSize {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    transition: all 0.25s;
+    
+}
+
+#setTableSize:hover{
+    transform: translate3d(0,-0.8px,0);
+    background-color: cadetblue;
 }
 
 /*.square:hover{
